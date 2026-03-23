@@ -2,8 +2,16 @@
 
 import { useLanguage } from './language-context'
 import { Button } from '@/components/ui/button'
-import { Phone, Mail, Linkedin, Download, Copy, Check } from 'lucide-react'
+import { Phone, Mail, Linkedin, Download, Copy, Check, Calendar } from 'lucide-react'
 import { useState } from 'react'
+
+const MaltIcon = ({ className = "w-6 h-6 text-primary" }: { className?: string }) => (
+  <img src="/malt.png" alt="Malt" className={className} />
+)
+
+const CollectiveIcon = ({ className = "w-6 h-6 text-primary" }: { className?: string }) => (
+  <img src="/collective.png" alt="Collective" className={className} />
+)
 
 const contactInfo = [
   {
@@ -11,21 +19,48 @@ const contactInfo = [
     labelFr: 'Téléphone',
     labelEn: 'Phone',
     value: '07 88 79 99 65',
-    href: 'tel:+33788799965'
+    href: 'tel:+33788799965',
+    external: false
   },
   {
     icon: Mail,
     labelFr: 'Email',
     labelEn: 'Email',
     value: 'samueljeanbaptiste@hotmail.fr',
-    href: 'mailto:samueljeanbaptiste@hotmail.fr'
+    href: 'mailto:samueljeanbaptiste@hotmail.fr',
+    external: false
   },
   {
     icon: Linkedin,
     labelFr: 'LinkedIn',
     labelEn: 'LinkedIn',
     value: 'linkedin.com/in/samueljeanbaptiste',
-    href: 'https://linkedin.com/in/samueljeanbaptiste'
+    href: 'https://linkedin.com/in/samueljeanbaptiste',
+    external: true
+  },
+  {
+    icon: MaltIcon,
+    labelFr: 'Malt',
+    labelEn: 'Malt',
+    value: 'malt.fr/profile/samueljeanbaptiste',
+    href: 'https://www.malt.fr/profile/samueljeanbaptiste',
+    external: true
+  },
+  {
+    icon: Calendar,
+    labelFr: 'Calendly',
+    labelEn: 'Calendly',
+    value: 'calendly.com/samueljb88/30min',
+    href: 'https://calendly.com/samueljb88/30min',
+    external: true
+  },
+  {
+    icon: CollectiveIcon,
+    labelFr: 'Collective',
+    labelEn: 'Collective',
+    value: 'collective.com/ton-profil',
+    href: 'https://www.collective.work/profile/samuel-jean-baptiste',
+    external: true
   }
 ]
 
@@ -73,8 +108,8 @@ export function ContactSection() {
                   </p>
                   <a
                     href={info.href}
-                    target={info.icon === Linkedin ? '_blank' : undefined}
-                    rel={info.icon === Linkedin ? 'noopener noreferrer' : undefined}
+                    target={info.external ? '_blank' : undefined}
+                    rel={info.external ? 'noopener noreferrer' : undefined}
                     className="font-medium text-foreground hover:text-primary transition-colors break-all"
                   >
                     {info.value}
@@ -101,7 +136,7 @@ export function ContactSection() {
           })}
         </div>
 
-        {/* Download CV Button */}
+        {/* Download CV Button - déjà fonctionnel */}
         <div className="text-center mt-12">
           <Button size="lg" className="gap-2" asChild>
             <a href="/CV-Samuel-JEAN-BAPTISTE.pdf" download>

@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   description: 'Chef de Projet IT avec +10 ans d\'expérience en pilotage de projets d\'infrastructure critique et transformation digitale. Expert AWS, ITIL, Agile.',
   keywords: ['Chef de Projet IT', 'Infrastructure', 'Transformation Digitale', 'AWS', 'ITIL', 'Agile', 'Cloud Migration'],
   authors: [{ name: 'Samuel JEAN-BAPTISTE' }],
+
+  icons: '/images/samuel-jb.png',  
+
   openGraph: {
     title: 'Samuel JEAN-BAPTISTE | Chef de Projet IT',
     description: 'Je sécurise vos initiatives IT de bout en bout.',
@@ -41,7 +44,7 @@ export default function RootLayout({
       <body className={`${dmSans.variable} ${syne.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange={false}
         >
