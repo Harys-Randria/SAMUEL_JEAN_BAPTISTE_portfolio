@@ -136,7 +136,6 @@ export function ContactSection() {
           })}
         </div>
 
-        {/* Download CV Button - déjà fonctionnel */}
         <div className="text-center mt-12">
           <Button size="lg" className="gap-2" asChild>
             <a href="/CV-Samuel-JEAN-BAPTISTE.pdf" download>

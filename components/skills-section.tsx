@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from './language-context'
-import { Briefcase, Settings, Wrench, Cloud, Monitor, Globe, Building2, BarChart3 } from 'lucide-react'
+import { Briefcase, Wrench, Cloud, Monitor, Globe, Building2, GitBranch, Layers, Award, BarChart3 } from 'lucide-react'
 
 const skillCategories = [
   {
@@ -11,16 +11,22 @@ const skillCategories = [
     skills: ['COPIL/COPROJ', 'Budget & Planning', 'KPI/SLA', 'MOE/MOA', 'Risk Management', 'Reporting']
   },
   {
-    icon: Settings,
+    icon: GitBranch,
     titleFr: 'Méthodologies',
     titleEn: 'Methodologies',
-    skills: ['ITIL v4', 'PRINCE2', 'Agile', 'SCRUM', 'DevOps']
+    skills: ['Agile']
+  },
+  {
+    icon: Layers,
+    titleFr: 'Frameworks',
+    titleEn: 'Frameworks',
+    skills: ['SCRUM', 'DevOps']
   },
   {
     icon: Wrench,
     titleFr: 'Outils',
     titleEn: 'Tools',
-    skills: ['Jira', 'ServiceNow', 'MS Project', 'ITSM', 'MS365', 'Confluence']
+    skills: ['Jira', 'ServiceNow', 'MS Project', 'ITSM', 'MS365', 'Confluence', 'GLPI']
   },
   {
     icon: Cloud,
@@ -50,7 +56,14 @@ const skillCategories = [
     icon: BarChart3,
     titleFr: 'Supervision',
     titleEn: 'Monitoring',
-    skills: ['Nagios', 'Check MK', 'PATROL', 'HPOM', 'GLPI']
+    skills: ['Nagios', 'Check MK', 'PATROL', 'HPOM']
+  },
+  {
+    icon: Award,       
+    titleFr: 'Certifications en cours',
+    titleEn: 'Certifications in progress',
+    skills: ['ITIL V4', 'PRINCE2'],
+    isInProgress: true  
   }
 ]
 
