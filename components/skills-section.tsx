@@ -57,13 +57,6 @@ const skillCategories = [
     titleFr: 'Supervision',
     titleEn: 'Monitoring',
     skills: ['Nagios', 'Check MK', 'PATROL', 'HPOM']
-  },
-  {
-    icon: Award,       
-    titleFr: 'Certifications en cours',
-    titleEn: 'Certifications in progress',
-    skills: ['ITIL V4', 'PRINCE2'],
-    isInProgress: true  
   }
 ]
 

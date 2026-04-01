@@ -80,7 +80,7 @@ const experiences = [
     achievementsFr: [
       'Management équipe 10 consultants, supervision niveau N1/N2',
       'Réduction de 35% des faux positifs à la console de monitoring',
-      'Animation cellules de crise pour incidents majeurs',
+      'Participation aux ateliers collaboratifs entre le SDM et client',
       'Supervision de 200+ équipements'
     ],
     achievementsEn: [

@@ -90,27 +90,6 @@ export function EducationSection() {
                 </div>
               ))}
             </div>
-
-            {/* Certifications */}
-            <h3 className="font-[family-name:var(--font-syne)] font-semibold text-xl flex items-center gap-2 pt-6">
-              <Award className="w-6 h-6 text-primary" />
-              {t('Certifications', 'Certifications')}
-            </h3>
-            <div className="flex flex-wrap gap-4">
-              {certifications.map((cert) => (
-                <div
-                  key={cert.nameFr}
-                  className="px-4 py-3 rounded-xl bg-card border border-border flex items-center gap-3"
-                >
-                  <span className="font-medium">
-                    {language === 'fr' ? cert.nameFr : cert.nameEn}
-                  </span>
-                  <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-primary/10 text-primary">
-                    {language === 'fr' ? cert.statusFr : cert.statusEn}
-                  </span>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Languages */}

@@ -2,7 +2,7 @@
 
 import { useLanguage } from './language-context'
 import { Button } from '@/components/ui/button'
-import { Phone, Mail, Linkedin, Download, Copy, Check, Calendar } from 'lucide-react'
+import { Phone, Linkedin, Download, Copy, Check, Calendar } from 'lucide-react'
 import { useState } from 'react'
 
 const MaltIcon = ({ className = "w-6 h-6 text-primary" }: { className?: string }) => (
@@ -23,19 +23,11 @@ const contactInfo = [
     external: false
   },
   {
-    icon: Mail,
-    labelFr: 'Email',
-    labelEn: 'Email',
-    value: 'samueljeanbaptiste@hotmail.fr',
-    href: 'mailto:samueljeanbaptiste@hotmail.fr',
-    external: false
-  },
-  {
     icon: Linkedin,
     labelFr: 'LinkedIn',
     labelEn: 'LinkedIn',
-    value: 'linkedin.com/in/samueljeanbaptiste',
-    href: 'https://linkedin.com/in/samueljeanbaptiste',
+    value: 'linkedin.com/in/samuel-jeanbaptiste',
+    href: 'https://www.linkedin.com/in/samuel-jeanbaptiste/',
     external: true
   },
   {
@@ -47,18 +39,10 @@ const contactInfo = [
     external: true
   },
   {
-    icon: Calendar,
-    labelFr: 'Calendly',
-    labelEn: 'Calendly',
-    value: 'calendly.com/samueljb88/30min',
-    href: 'https://calendly.com/samueljb88/30min',
-    external: true
-  },
-  {
     icon: CollectiveIcon,
     labelFr: 'Collective',
     labelEn: 'Collective',
-    value: 'collective.com/ton-profil',
+    value: 'collective.work/profile/samuel-jean-baptiste',
     href: 'https://www.collective.work/profile/samuel-jean-baptiste',
     external: true
   }
@@ -90,8 +74,33 @@ export function ContactSection() {
           </p>
         </div>
 
-        {/* Contact Cards */}
-        <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        {/* Calendly CTA */}
+        <div className="max-w-4xl mx-auto mb-10">
+          <a
+            href="https://calendly.com/samueljb88/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-between gap-4 w-full px-8 py-5 rounded-2xl bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 group"
+          >
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-primary-foreground/15 flex items-center justify-center shrink-0">
+                <Calendar className="w-5 h-5" />
+              </div>
+              <div className="text-left">
+                <p className="font-semibold text-lg leading-tight">
+                  {t('Réserver un appel de 30 min', 'Book a 30-min call')}
+                </p>
+                <p className="text-primary-foreground/70 text-sm mt-0.5">
+                  {t('Discutons de votre projet', 'Let\'s talk about your project')}
+                </p>
+              </div>
+            </div>
+            <span className="text-primary-foreground/70 group-hover:translate-x-1 transition-transform text-xl">→</span>
+          </a>
+        </div>
+
+        {/* Contact Cards 2x2 */}
+        <div className="grid grid-cols-2 gap-6 max-w-4xl mx-auto">
           {contactInfo.map((info, index) => {
             const Icon = info.icon
             return (
@@ -110,7 +119,7 @@ export function ContactSection() {
                     href={info.href}
                     target={info.external ? '_blank' : undefined}
                     rel={info.external ? 'noopener noreferrer' : undefined}
-                    className="font-medium text-foreground hover:text-primary transition-colors break-all"
+                    className="font-medium text-foreground hover:text-primary transition-colors text-xs whitespace-nowrap"
                   >
                     {info.value}
                   </a>
